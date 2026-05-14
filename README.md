@@ -15,7 +15,7 @@ A modern responsive developer portfolio built using HTML and CSS.
 - CSS3
 
 ## Live Demo
-(Add your GitHub Pages link here later)
+https://sam359-debug.github.io/sameer-portfolio/
 
 ## Author
 Sameer Bagdi
