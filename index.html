@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sameer Bagdi | Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f3f3f3;
+      color:#111;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+      background-image:
+        radial-gradient(circle at top left, rgba(36,56,91,0.04), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(36,56,91,0.05), transparent 25%);
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:30px 4%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(243,243,243,0.92);
+      position:relative;
+    }
+
+    .nav-left,
+    .nav-right{
+      display:flex;
+      gap:25px;
+      align-items:center;
+    }
+
+    .nav-left a{
+      font-weight:500;
+      position:relative;
+      transition:0.3s ease;
+    }
+
+    .nav-left a::after{
+      content:"";
+      position:absolute;
+      width:0%;
+      height:2px;
+      left:0;
+      bottom:-5px;
+      background:#111;
+      transition:0.3s;
+    }
+
+    .nav-left a:hover::after{
+      width:100%;
+    }
+
+    .nav-left a:hover{
+      color:#24385b;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      letter-spacing:1px;
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .nav-right i{
+      font-size:1.2rem;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .nav-right i:hover{
+      transform:translateY(-3px);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:85vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:70px;
+      padding:60px 7% 40px;
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:520px;
+      border-radius:40px;
+      object-fit:cover;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.4s ease;
+    }
+
+    .hero-image img:hover{
+      transform:scale(1.02);
+      box-shadow:0 18px 40px rgba(0,0,0,0.12);
+    }
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image::after{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:rgba(36,56,91,0.08);
+      bottom:-20px;
+      right:20px;
+      z-index:-1;
+    }
+
+    .hero-content{
+      flex:1;
+      margin-left:40px;
+    }
+
+    .hero-content p{
+      font-size:1.05rem;
+      color:#333;
+      line-height:1.8;
+      margin-bottom:20px;
+      max-width:600px;
+    }
+
+    .hero-content h1{
+      font-size:3.3rem;
+      line-height:1.15;
+      margin-bottom:20px;
+      color:#1a2942;
+    }
+
+    .highlight-text{
+      color:#24385b;
+      position:relative;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:30px;
+      background:white;
+      color:#24385b;
+      font-size:0.9rem;
+      font-weight:600;
+      margin-bottom:20px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.06);
+      animation:floatTag 3s ease-in-out infinite;
+    }
+
+    @keyframes floatTag{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-4px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    .buttons{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:18px;
+      margin-top:35px;
+      margin-left:0px;
+    }
+
+    .btn{
+      padding:14px 35px;
+      border-radius:40px;
+      background:#24385b;
+      color:white;
+      font-weight:500;
+      letter-spacing:1px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#111;
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn:active{
+      transform:scale(0.97);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 7%;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-bottom:50px;
+      text-align:center;
+      font-weight:700;
+    }
+
+    .section-title::after{
+      content:"";
+      display:block;
+      width:80px;
+      height:4px;
+      background:#24385b;
+      margin:14px auto 0;
+      border-radius:10px;
+    }
+
+    .section-subtitle{
+      text-align:center;
+      color:#666;
+      max-width:650px;
+      margin:0 auto 40px;
+      line-height:1.7;
+      font-size:1rem;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:white;
+      border-radius:25px;
+      padding:25px;
+      transition:0.35s ease;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+      border:1px solid transparent;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      border:1px solid rgba(36,56,91,0.15);
+      box-shadow:0 12px 35px rgba(0,0,0,0.10);
+    }
+
+    .project-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:#24385b;
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:0.35s ease;
+    }
+
+    .project-card:hover::before{
+      transform:scaleX(1);
+    }
+
+    .project-card img{
+      width:100%;
+      border-radius:18px;
+      margin-bottom:20px;
+    }
+
+    .project-card img:hover{
+      transform:scale(1.03);
+      transition:0.4s ease;
+    }
+
+    .project-card h3{
+      margin-bottom:10px;
+      font-size:1.3rem;
+      color:#1f2f4d;
+    }
+
+    .project-card p{
+      color:#555;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .skill-badge{
+      display:inline-block;
+      padding:8px 14px;
+      margin:6px;
+      border-radius:20px;
+      background:#eef2f7;
+      color:#24385b;
+      font-size:0.9rem;
+      font-weight:500;
+    }
+
+    .skill-badge:hover{
+      transform:translateY(-2px);
+      transition:0.3s ease;
+      background:#24385b;
+      color:white;
+    }
+
+    .stats-section{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .stat-box{
+      background:white;
+      border-radius:22px;
+      padding:30px 20px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+      transition:0.35s ease;
+    }
+
+    .stat-box:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 35px rgba(0,0,0,0.10);
+    }
+
+    .stat-box h3{
+      font-size:2rem;
+      color:#24385b;
+      margin-bottom:8px;
+    }
+
+    .stat-box p{
+      color:#666;
+      font-size:0.95rem;
+    }
+
+    .project-link{
+      color:#24385b;
+      font-weight:600;
+    }
+
+    .project-link:hover{
+      text-decoration:underline;
+    }
+
+    .coming-soon{
+      display:inline-block;
+      margin-top:12px;
+      padding:8px 14px;
+      border-radius:20px;
+      background:#eef2f7;
+      color:#24385b;
+      font-size:0.85rem;
+      font-weight:600;
+    }
+
+    html{
+      scroll-padding-top:100px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#111;
+      color:white;
+      margin-top:50px;
+      letter-spacing:1px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:20px;
+      }
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      .hero-content{
+        margin-left:0;
+      }
+
+      .hero-content p{
+        margin:auto;
+      }
+
+      .buttons{
+        justify-content:center;
+        align-items:center;
+        margin-left:0;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .logo{
+        position:static;
+        transform:none;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .hero-content h1{
+        font-size:2.2rem;
+      }
+
+      .logo{
+        font-size:1.2rem;
+      }
+
+      .nav-left{
+        gap:18px;
+        font-size:0.95rem;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+    }
+
+    #topBtn{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      width:50px;
+      height:50px;
+      border:none;
+      border-radius:50%;
+      background:#24385b;
+      color:white;
+      font-size:1.2rem;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      transition:0.3s ease;
+    }
+
+    #topBtn:hover{
+      transform:translateY(-4px);
+      background:#111;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="nav-left">
+      <a href="#home">Home</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="logo">
+      Sameer Bagdi
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/sameer-bagdi/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <a href="https://github.com/Sam359-debug" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-image">
+      <img src="image.png" alt="Sameer Bagdi">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        Available for Internships & Freelance
+      </div>
+      <h1>
+        I'm <span class="highlight-text">Sameer Bagdi</span><br>
+        a Full Stack Developer.
+      </h1>
+
+      <p>
+        I build responsive and modern web applications with clean
+        UI, scalable backend systems, and smooth user experiences.
+        Passionate about frontend development, backend engineering,
+        and creating impactful digital products.
+      </p>
+
+      <p>
+        Scroll below to explore my projects, skills, and resume.
+      </p>
+
+      <div class="buttons">
+        <a
+          href="https://www.linkedin.com/in/sameer-bagdi/"
+          target="_blank"
+          class="btn"
+        >
+          LINKEDIN
+        </a>
+
+        <a
+          href="https://github.com/Sam359-debug"
+          target="_blank"
+          class="btn"
+        >
+          GITHUB
+        </a>
+
+        <a href="Sameer_Resume.pdf" target="_blank" class="btn">
+          RESUME
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      Passionate about building modern web experiences,
+      continuously learning new technologies, and creating
+      impactful digital solutions.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Who I Am</h3>
+
+        <p>
+          I’m Sameer Bagdi, a passionate Full Stack Developer
+          focused on building responsive and modern web
+          applications. I enjoy creating clean user interfaces,
+          scalable backend systems, and impactful digital
+          experiences.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>My Goal</h3>
+
+        <p>
+          My goal is to continuously improve my development
+          skills, contribute to real-world projects, and build
+          innovative software solutions that help people and
+          businesses.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-subtitle">
+      Technologies and tools I use to design, develop,
+      and deploy responsive web applications.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Frontend</h3>
+
+        <div class="skill-badge">HTML5</div>
+        <div class="skill-badge">CSS3</div>
+        <div class="skill-badge">JavaScript</div>
+        <div class="skill-badge">React</div>
+      </div>
+
+      <div class="project-card">
+        <h3>Programming</h3>
+
+        <div class="skill-badge">C</div>
+        <div class="skill-badge">C++</div>
+        <div class="skill-badge">Core Java</div>
+        <div class="skill-badge">SQL</div>
+      </div>
+
+      <div class="project-card">
+        <h3>Tools & Platforms</h3>
+
+        <div class="skill-badge">GitHub</div>
+        <div class="skill-badge">Linux</div>
+        <div class="skill-badge">Windows</div>
+        <div class="skill-badge">MS Office</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section id="stats">
+
+    <h2 class="section-title">Highlights</h2>
+
+    <div class="stats-section">
+
+      <div class="stat-box">
+        <h3>5+</h3>
+        <p>Frontend Projects</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>10+</h3>
+        <p>Technologies Learned</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>2028</h3>
+        <p>B.Tech Graduation</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Passion For Coding</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">
+      A collection of projects showcasing my frontend,
+      backend, and full stack development skills.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Personal Portfolio</h3>
+        <p>
+          A fully responsive developer portfolio designed and
+          developed using HTML and CSS with modern UI and
+          responsive layouts.
+        </p>
+        <a href="https://github.com/Sam359-debug" target="_blank" class="project-link">View Project →</a>
+        <div class="coming-soon">Featured Project</div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Upcoming React Projects</h3>
+        <p>
+          Currently building modern React applications and
+          interactive frontend projects to expand my full stack
+          development skills.
+        </p>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h3>Learning Journey</h3>
+        <p>
+          Exploring frontend, backend, and full stack development
+          through hands-on practice, projects, and continuous
+          learning.
+        </p>
+        <div class="coming-soon">More Projects Soon</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESUME -->
+
+  <section id="resume">
+
+    <h2 class="section-title">Resume</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Download My Resume</h3>
+
+        <p>
+          View or download my resume to explore my skills,
+          education, technical background, and experience.
+        </p>
+
+        <a
+          href="Sameer_Resume.pdf"
+          target="_blank"
+          class="project-link"
+        >
+          Open Resume →
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Get In Touch</h3>
+
+        <p>
+          Interested in collaborating, internships, freelance
+          opportunities, or tech discussions? Feel free to
+          connect with me.
+        </p>
+
+        <p>
+          <strong>Email:</strong><br>
+          sameerbagdi2468@gmail.com
+        </p>
+
+        <p>
+          <strong>LinkedIn:</strong><br>
+          <a href="https://www.linkedin.com/in/sameer-bagdi/" target="_blank">
+            linkedin.com/in/sameer-bagdi
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong><br>
+          <a href="https://github.com/Sam359-debug" target="_blank">
+            github.com/Sam359-debug
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div style="text-align:center; padding-bottom:20px; color:#555; font-size:0.95rem;">
+    Built with HTML & CSS by Sameer Bagdi
+  </div>
+
+  <button id="topBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    ↑
+  </button>
+
+  <section style="padding-top:20px; padding-bottom:40px;">
+
+    <div class="stats-section">
+
+      <div class="stat-box">
+        <h3>Fast Learner</h3>
+        <p>
+          Passionate about continuously learning modern
+          technologies and improving development skills.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Team Player</h3>
+        <p>
+          Enjoy collaborating with others and building
+          impactful digital experiences together.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Creative Thinker</h3>
+        <p>
+          Focused on solving problems with clean UI,
+          responsive design, and efficient solutions.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Sameer Bagdi — Full Stack Developer<br>
+    Designed & Developed with Passion
+  </footer>
+
+</body>
+</html>
